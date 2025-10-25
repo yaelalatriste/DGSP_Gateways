@@ -1,4 +1,5 @@
-﻿using Api.Gateway.Proxies.SMedicos.Commands.Expedientes;
+﻿using Api.Gateway.Proxies.DGRH.Queries.Empleado;
+using Api.Gateway.Proxies.SMedicos.Commands.Expedientes;
 using Api.Gateway.Proxies.SMedicos.Queries.Expedientes;
 using Api.Gateway.Proxies.SMedicos.Queries.Reportes;
 using Api.Gateway.Proxies.SMedicos.Queries.Siacom.Consultorios;

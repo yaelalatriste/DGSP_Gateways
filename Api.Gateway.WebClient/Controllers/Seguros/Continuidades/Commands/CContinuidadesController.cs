@@ -10,18 +10,18 @@ namespace Api.Gateway.WebClient.Controllers.Seguros.Continuidades.Commands
     [ApiController]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("seguros/scontinuidades")]
-    public class CSContinuidadesController : ControllerBase
+    public class CContinuidadesController : ControllerBase
     {
-        private readonly ICSContinuidadesProxy _scontinuidad;
+        private readonly ICContinuidadesProxy _scontinuidad;
 
-        public CSContinuidadesController(ICSContinuidadesProxy scontinuidad)
+        public CContinuidadesController(ICContinuidadesProxy scontinuidad)
         {
             _scontinuidad = scontinuidad;
         }
 
         [Route("createScontinuidad")]
         [HttpPost]
-        public async Task<IActionResult> CreateSContinuidad([FromBody] SContinuidadCreateCommand command)
+        public async Task<IActionResult> CreateSContinuidad([FromBody] ContinuidadCreateCommand command)
         {
             var expediente = await _scontinuidad.CreateSContinuidades(command);
             if (expediente != null)
@@ -34,7 +34,7 @@ namespace Api.Gateway.WebClient.Controllers.Seguros.Continuidades.Commands
 
         [Route("updateScontinuidad")]
         [HttpPut]
-        public async Task<IActionResult> UpdateSContinuidad([FromBody] SContinuidadUpdateCommand command)
+        public async Task<IActionResult> UpdateSContinuidad([FromBody] ContinuidadUpdateCommand command)
         {
             var expediente = await _scontinuidad.UpdateSContinuidades(command);
             if (expediente != null)

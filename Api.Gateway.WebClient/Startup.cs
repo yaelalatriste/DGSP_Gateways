@@ -2,6 +2,7 @@ using Api.Gateway.WebClient.Config;
 using Api.Gateway.WebClient.Config.Catalogos;
 using Api.Gateway.WebClient.Config.Cendis;
 using Api.Gateway.WebClient.Config.DG;
+using Api.Gateway.WebClient.Config.DGRH;
 using Api.Gateway.WebClient.Config.Estatus;
 using Api.Gateway.WebClient.Config.Generales;
 using Api.Gateway.WebClient.Config.Planeacion;
@@ -48,11 +49,13 @@ namespace Api.Gateway.WebClient
             services.AddAppsettingBinding(Configuration).AddProxiesEstatusQueries(Configuration);
             services.AddAppsettingBinding(Configuration).AddProxiesDGQueries(Configuration);
             services.AddAppsettingBinding(Configuration).AddProxiesDGCommands(Configuration);
+            services.AddAppsettingBinding(Configuration).AddProxiesDGRHQueries(Configuration);
 
-            services.AddControllers().AddJsonOptions(options => { 
-                options.JsonSerializerOptions.PropertyNamingPolicy = null; 
-                options.JsonSerializerOptions.PropertyNameCaseInsensitive = false;
-                //options.JsonSerializerOptions.IgnoreNullValues = true;
+
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.DefaultIgnoreCondition =
+                    System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
             });
 
             services.AddControllers();

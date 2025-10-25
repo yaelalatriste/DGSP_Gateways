@@ -9,6 +9,7 @@ using Api.Gateway.Proxies.Catalogos.CTEntregables.Queries;
 using Api.Gateway.Proxies.Catalogos.CTExpedientes.Queries;
 using Api.Gateway.Proxies.Catalogos.CTIncidencias;
 using Api.Gateway.Proxies.Catalogos.CTMeses.Queries;
+using Api.Gateway.Proxies.Catalogos.CTMovimientos.Queries;
 using Api.Gateway.Proxies.Catalogos.CTPProcesos.Queries;
 using Api.Gateway.Proxies.Catalogos.CTUnidades.Queries;
 using Microsoft.Extensions.Configuration;
@@ -33,6 +34,7 @@ namespace Api.Gateway.WebClient.Config.Catalogos
             service.AddHttpClient<IQCTAsuntoProxy, QCTAsuntoProxy>();
             service.AddHttpClient<IQCTExpedienteProxy, QCTExpedienteProxy>();
             service.AddHttpClient<IQCTArchivoProxy, QCTArchivoProxy>();
+            service.AddHttpClient<IQCTMovimientoProxy, QCTMovimientoProxy>();
 
             return service;
         }

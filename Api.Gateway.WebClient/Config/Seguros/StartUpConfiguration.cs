@@ -14,7 +14,7 @@ namespace Api.Gateway.WebClient.Config.Seguros
         {
             service.AddHttpClient<IQExpedienteSegurosProxy, QExpedienteSegurosProxy>();
             service.AddHttpClient<IRJubiladosProxy, RJubiladosProxy>();
-            service.AddHttpClient<IQSContinuidadesProxy, QSContinuidadesProxy>();
+            service.AddHttpClient<IQContinuidadProxy, QContinuidadProxy>();
 
             return service;
         }
@@ -22,7 +22,7 @@ namespace Api.Gateway.WebClient.Config.Seguros
         public static IServiceCollection AddProxiesSegurosCommands(this IServiceCollection service, IConfiguration configuration)
         {
             service.AddHttpClient<ICExpedienteSegurosProxy, CExpedienteSegurosProxy>();
-            service.AddHttpClient<ICSContinuidadesProxy, CSContinuidadesProxy>();
+            service.AddHttpClient<ICContinuidadesProxy, CContinuidadesProxy>();
 
             return service;
         }

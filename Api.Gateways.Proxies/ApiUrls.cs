@@ -16,5 +16,6 @@ namespace Api.Gateways.Proxies
         public string SegurosUrl { get; set; }
         public string PrestacionesUrl { get; set; }
         public string SMedicosUrl { get; set; }
+        public string DgrhUrl { get; set; }
     }
 }

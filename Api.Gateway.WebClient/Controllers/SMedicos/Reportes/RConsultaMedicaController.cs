@@ -1,4 +1,5 @@
 ﻿using Api.Gateway.Models.Reportes;
+using Api.Gateway.Proxies.DGRH.Queries.Empleado;
 using Api.Gateway.Proxies.SMedicos.Queries.Reportes;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
